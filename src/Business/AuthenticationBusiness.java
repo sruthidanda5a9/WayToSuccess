@@ -21,7 +21,7 @@ public class AuthenticationBusiness {
 		 */
 		authenticationDTO = encryptPasswordDTO(authenticationDTO);
 		AuthenticationModel authenticationModel = authenticationinterface.getUsers(authenticationDTO.getUserName());
-		if(authenticationModel.getUserName()!=null && authenticationModel.getUserName().equals(authenticationDTO.getUserName())
+		if(authenticationModel.getUserName().equals(authenticationDTO.getUserName())
 				&& authenticationModel.getPassword()!=null && authenticationModel.getPassword().equals(authenticationDTO.getPassword()))
 		{
 			authenticationDTO.setUserName(authenticationModel.getUserName());
